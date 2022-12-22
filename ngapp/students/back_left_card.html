@@ -1,0 +1,161 @@
+<table class="student-report-card-inner attendance-card">
+    <tr>
+        <th class="text-center">&nbsp;</th>
+        <th class="text-center">Jun</th>
+        <th class="text-center">Jul</th>
+        <th class="text-center">Aug</th>
+        <th class="text-center">Sept</th>
+        <th class="text-center">Oct</th>
+        <th class="text-center">Nov</th>
+        <th class="text-center">Dec</th>
+        <th class="text-center">Jan</th>
+        <th class="text-center">Feb</th>
+        <th class="text-center">Mar</th>
+        <th class="text-center">Total</th>
+    </tr>
+    <!-- <tr ng-repeat="x in vm.attendanceList track by $index">
+        <td class="text-left">{{x.particulars}}</td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="x.Jun" ng-change="vm.calculateSchoolDays(x)">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="x.Jul" ng-change="vm.calculateDays(x)">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="x.Aug" ng-change="vm.calculateDays(x)">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="x.Sep" ng-change="vm.calculateDays(x)">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="x.Oct" ng-change="vm.calculateDays(x)">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="x.Nov" ng-change="vm.calculateDays(x)">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="x.Dec" ng-change="vm.calculateDays(x)">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="x.Jan" ng-change="vm.calculateDays(x)">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="x.Feb" ng-change="vm.calculateDays(x)">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="x.Mar" ng-change="vm.calculateDays(x)">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" disabled ng-model="x.Total" ng-change="vm.calculateDays(x)">
+        </td>
+    </tr> -->
+    <tr>
+        <td class="text-left">{{vm.schoolDays.particulars}}</td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolDays.Jun" ng-change="vm.calculateSchoolDays()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolDays.Jul" ng-change="vm.calculateSchoolDays()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolDays.Aug" ng-change="vm.calculateSchoolDays()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolDays.Sep" ng-change="vm.calculateSchoolDays()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolDays.Oct" ng-change="vm.calculateSchoolDays()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolDays.Nov" ng-change="vm.calculateSchoolDays()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolDays.Dec" ng-change="vm.calculateSchoolDays()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolDays.Jan" ng-change="vm.calculateSchoolDays()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolDays.Feb" ng-change="vm.calculateSchoolDays()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolDays.Mar" ng-change="vm.calculateSchoolDays()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" disabled ng-model="vm.schoolDays.Total">
+        </td>
+    </tr>
+    <tr>
+        <td class="text-left">{{vm.schoolPresent.particulars}}</td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolPresent.Jun" ng-change="vm.calculatePresents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolPresent.Jul" ng-change="vm.calculatePresents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolPresent.Aug" ng-change="vm.calculatePresents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolPresent.Sep" ng-change="vm.calculatePresents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolPresent.Oct" ng-change="vm.calculatePresents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolPresent.Nov" ng-change="vm.calculatePresents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolPresent.Dec" ng-change="vm.calculatePresents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolPresent.Jan" ng-change="vm.calculatePresents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolPresent.Feb" ng-change="vm.calculatePresents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolPresent.Mar" ng-change="vm.calculatePresents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" disabled ng-model="vm.schoolPresent.Total">
+        </td>
+    </tr>
+    <tr>
+        <td class="text-left">{{vm.schoolAbsent.particulars}}</td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolAbsent.Jun" ng-change="vm.calculateAbsents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolAbsent.Jul" ng-change="vm.calculateAbsents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolAbsent.Aug" ng-change="vm.calculateAbsents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolAbsent.Sep" ng-change="vm.calculateAbsents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolAbsent.Oct" ng-change="vm.calculateAbsents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolAbsent.Nov" ng-change="vm.calculateAbsents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolAbsent.Dec" ng-change="vm.calculateAbsents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolAbsent.Jan" ng-change="vm.calculateAbsents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolAbsent.Feb" ng-change="vm.calculateAbsents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" ng-disabled="vm.fullView" only-numbers ng-model="vm.schoolAbsent.Mar" ng-change="vm.calculateAbsents()">
+        </td>
+        <td class="text-center">
+            <input type="text" class="text-center" disabled ng-model="vm.schoolAbsent.Total">
+        </td>
+    </tr>
+
+</table>

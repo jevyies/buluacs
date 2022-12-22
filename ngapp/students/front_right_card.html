@@ -1,0 +1,327 @@
+<!-- <div class="card-loading-div">
+    <img src="assets/images/loading.gif" class="loading-img">
+</div> -->
+<table class="student-report-card-inner table-card">
+    <tr class="table-card-header">
+        <th rowspan="2" class="text-center">Core Values</th>
+        <th rowspan="2" class="text-center">Behavior Statements</th>
+        <th colspan="4" class="text-center">Quarter</th>
+    </tr>
+    <tr class="table-grading-header">
+        <th class="text-center">1st</th>
+        <th class="text-center">2nd</th>
+        <th class="text-center">3rd</th>
+        <th class="text-center">4th</th>
+    </tr>
+    <tr class="subject-grade-list">
+        <td rowspan="2">1. Maka-Diyos</td>
+        <td>
+            Expresses one spriritual beliefs while respecting the spiritual English beliefs of others
+        </td>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaDiyosA1">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaDiyosA2">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaDiyosA3">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaDiyosA4">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <tr class="subject-grade-list">
+            <td>Shows adherence to ethical principles by upholding truth</td>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaDiyosB1">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaDiyosB2">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaDiyosB3">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaDiyosB4">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+        </tr>
+    </tr>
+    <tr class="subject-grade-list">
+        <td rowspan="2">2. Makatao</td>
+        <td>
+            Is sensitive to individual , social, and cultural differences
+        </td>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaTaoA1">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaTaoA2">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaTaoA3">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaTaoA4">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <tr class="subject-grade-list">
+            <td>Demonstrates contribution toward solidarity</td>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaTaoB1">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaTaoB2">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaTaoB3">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaTaoB4">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+        </tr>
+    </tr>
+    <tr class="subject-grade-list">
+        <td>3. Maka Kalikasan
+        </td>
+        <td>
+            Cares for the environment and utilizes resources wisely, judiciously and economically
+        </td>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.Makakalikasan1">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.Makakalikasan2">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.Makakalikasan3">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.Makakalikasan4">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+    </tr>
+    <tr class="subject-grade-list">
+        <td rowspan="2">4. Maka Bansa
+        </td>
+        <td>
+            Demonstrate pride in being a Filipino; exercises the rights and responsibilities of a Filipino citizen
+        </td>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaBansaA1">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaBansaA2">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaBansaA3">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <th>
+            <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaBansaA4">
+                <option></option>
+                <option value="4">AO</option>
+                <option value="3">SO</option>
+                <option value="2">RO</option>
+                <option value="1">NO</option>
+            </select>
+        </th>
+        <tr class="subject-grade-list">
+            <td>Demonstrate appropriate behaviour in carrying out activities in the school, community, and country</td>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaBansaB1">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaBansaB2">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaBansaB3">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+            <th>
+                <select ng-disabled="vm.fullView" ng-model="vm.coreValues.MakaBansaB4">
+                    <option></option>
+                    <option value="4">AO</option>
+                    <option value="3">SO</option>
+                    <option value="2">RO</option>
+                    <option value="1">NO</option>
+                </select>
+            </th>
+        </tr>
+    </tr>
+</table>
+<div class="student-report-card-legends-2">
+    <table>
+        <tr>
+            <th>Marking</th>
+            <th>Non-numerical Rating</th>
+        </tr>
+        <tr>
+            <td>AO</td>
+            <td>Always Observed</td>
+        </tr>
+        <tr>
+            <td>SO</td>
+            <td>Sometimes Observed</td>
+        </tr>
+        <tr>
+            <td>RO</td>
+            <td>Rarely Observed</td>
+        </tr>
+        <tr>
+            <td>NO</td>
+            <td>Not Observed</td>
+        </tr>
+    </table>
+</div>

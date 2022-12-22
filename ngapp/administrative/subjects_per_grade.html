@@ -1,0 +1,37 @@
+<div class="modal-content">
+    <div class="container-fluid">
+        <div class="row modal-title-div">
+            <div class="col-md-12">
+                <span ng-click="modal.close()" class="pointer modal-exit">&times;</span>
+                <h4 class="modal-title-name">
+                    <span class="fa fa-cart-plus text-success"></span>&nbsp;{{ modal.titlename }} - Subjects</h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="row bottom-margin">
+            <div class="col-md-6" ng-repeat="x in modal.lists">
+                <a class="pointer" ng-click="modal.getDetails(x, $index)">{{x.subject_name}}</a>
+            </div>
+        </div>
+        <form class="row" ng-submit="modal.save()">
+            <div class="col-md-12 bottom-margin">
+                <div class="jv-form">
+                    <label class="text-center">Grade Level</label>
+                    <select class="form-control text-center" ng-model="modal.variables.subject_id" required>
+                        <option></option>
+                        <option ng-repeat="x in modal.subjects" ng-value="x.subject_id">{{x.subject_name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12 text-right">
+                <button type="button" class="btn btn-danger btn-sm" ng-click="modal.delete()" ng-if="modal.variables.x_id">
+                    <i class="fa fa-trash"></i>&nbsp;Remove Subject</button>
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-save"></i>&nbsp;Save</button>
+                <button type="button" class="btn btn-secondary btn-sm" ng-click="modal.close()">
+                    <i class="fa fa-times"></i>&nbsp;Close</button>
+            </div>
+        </form>
+    </div>
+</div>

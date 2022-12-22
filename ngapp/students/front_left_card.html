@@ -1,0 +1,96 @@
+<table class="student-report-card-inner table-card">
+    <tr class="table-card-header">
+        <th rowspan="2" class="text-center">Learning Areas</th>
+        <th colspan="5" class="text-center">Grading Period</th>
+        <th rowspan="2" class="text-center">Remarks</th>
+    </tr>
+    <tr class="table-grading-header">
+        <th class="text-center">1st</th>
+        <th class="text-center">2nd</th>
+        <th class="text-center">3rd</th>
+        <th class="text-center">4th</th>
+        <th class="text-center">Final Grade</th>
+    </tr>
+    <tr class="table-grading-header" ng-repeat="x in vm.cardList">
+        <td>{{x.subject_name}}</td>
+        <th>
+            <input type="text" class="text-center" ng-model="x.first_grading" ng-change="vm.calculateAverage(x)" ng-disabled="vm.fullView"
+                only-numbers-less-than-100>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="x.second_grading" ng-change="vm.calculateAverage(x)" ng-disabled="vm.fullView"
+                only-numbers-less-than-100>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="x.third_grading" ng-change="vm.calculateAverage(x)" ng-disabled="vm.fullView"
+                only-numbers-less-than-100>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="x.fourth_grading" ng-change="vm.calculateAverage(x)" ng-disabled="vm.fullView"
+                only-numbers-less-than-100>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="x.average" disabled>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="x.remarks" disabled>
+        </th>
+    </tr>
+    <tr class="table-grading-average">
+        <th>
+            <i>General Average</i>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="vm.firstGA" disabled>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="vm.secondGA" disabled>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="vm.thirdGA" disabled>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="vm.fourthGA" disabled>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="vm.averageGA" disabled>
+        </th>
+        <th>
+            <input type="text" class="text-center" ng-model="vm.remarksGA" disabled>
+        </th>
+    </tr>
+</table>
+<div class="student-report-card-legends-1">
+    <table>
+        <tr>
+            <th class="text-left">Descriptors</th>
+            <th class="text-center">Grading Scale</th>
+            <th class="text-center">Remarks</th>
+        </tr>
+        <tr>
+            <td class="text-left">Outstanding</td>
+            <td class="text-center">90 - 100</td>
+            <td class="text-center">Passed</td>
+        </tr>
+        <tr>
+            <td class="text-left">Very Satisfactory</td>
+            <td class="text-center">85 - 89</td>
+            <td class="text-center">Passed</td>
+        </tr>
+        <tr>
+            <td class="text-left">Satisfactory</td>
+            <td class="text-center">80 - 84</td>
+            <td class="text-center">Passed</td>
+        </tr>
+        <tr>
+            <td class="text-left">Fairly Satisfactory</td>
+            <td class="text-center">75 - 79</td>
+            <td class="text-center">Passed</td>
+        </tr>
+        <tr>
+            <td class="text-left">Did Not Meet Expectations</td>
+            <td class="text-center">Below 75</td>
+            <td class="text-center">Failed</td>
+        </tr>
+    </table>
+</div>

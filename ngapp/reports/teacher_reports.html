@@ -1,0 +1,91 @@
+<button class="accordion" ng-class="{active: vm.static}" ng-click="vm.getData()">
+    <span class="title">Student Reports</span>
+    <span class="icon">
+        <i class="fa fa-angle-double-right"></i>
+    </span>
+</button>
+<div class="panel" ng-class="{'show': vm.static}">
+    <form ng-submit="vm.save()">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 bottom-margin">
+                    <div class="card">
+                        <div class="card-header" ng-class="{active: vm.editInfo}">
+                            <div class="card-header-text">
+                                <p>School's Information</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="jv-form">
+                                <label class="text-center">Department's Name</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.list.department_name" ng-disabled="!vm.editInfo" required/>
+                            </div>
+                            <div class="jv-form">
+                                <label class="text-center">School's Name</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.list.school_name" ng-disabled="!vm.editInfo" required/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 bottom-margin">
+                    <div class="card">
+                        <div class="card-header" ng-class="{active: vm.editInfo}">
+                            <div class="card-header-text">
+                                <p>Principal's Information</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="jv-form">
+                                <label class="text-center">Principal's Name</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.list.principal_name" ng-disabled="!vm.editInfo" required/>
+                            </div>
+                            <div class="jv-form">
+                                <label class="text-center">Principal's Position</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.list.position" ng-disabled="!vm.editInfo" required/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 bottom-margin">
+                    <div class="card">
+                        <div class="card-header" ng-class="{active: vm.editInfo}">
+                            <div class="card-header-text">
+                                <p>School Year</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="jv-form">
+                                        <label class="text-center">From</label>
+                                        <input type="text" class="form-control text-center" ng-model="vm.list.school_year_from" ng-disabled="!vm.editInfo" required/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="jv-form">
+                                        <label class="text-center">To</label>
+                                        <input type="text" class="form-control text-center" ng-model="vm.list.school_year_to" ng-disabled="!vm.editInfo" required/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-md-12 text-right" ng-if="!vm.editInfo">
+                    <a class="pointer" ng-click="vm.editInfo = true">
+                        <i class="fa fa-pencil"></i>&nbsp;Edit Information</a>
+                </div>
+                <div class="col-md-12 text-right" ng-if="vm.editInfo">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-save"></i>&nbsp;Save</button>
+                    <button type="button" class="btn btn-secondary btn-sm" ng-click="vm.editInfo = false">
+                        <i class="fa fa-times"></i>&nbsp;Cancel</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

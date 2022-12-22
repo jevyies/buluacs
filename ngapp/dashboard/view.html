@@ -1,0 +1,16 @@
+<div ng-controller="DashboardCtrl as vm" class="dashboard">
+	<div class="contrainer row-black-bg">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-6">
+						<canvas id="bar" class="chart chart-bar" chart-data="vm.data" chart-labels="vm.labels" chart-series="vm.series"
+						 chart-colors="vm.ColorBar" chart-options="vm.options" chart-click="vm.clickme" chart-dataset-override="vm.DataSetOverride"></canvas>
+						<!-- <div id="chartContainer2" style="height: 300px; width: 100%;"></div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

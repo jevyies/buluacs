@@ -1,0 +1,33 @@
+<div class="container-fluid animated fadeIn">
+    <!-- student -->
+    <div class="row">
+        <div class="col-md-12">
+            <button class="accordion-report" ng-class="{active: vm.studentClick}" ng-click="vm.clickAccordion('student')">
+                <span>Student Reports</span>
+                <span class="icon">
+                    <i class="fa fa-angle-double-right"></i>
+                </span>
+            </button>
+            <!-- student views -->
+            <div class="panel" ng-class="{'show': vm.studentClick}">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h4 class="pointer dave-padding-bot-10" ng-click="vm.clickButton('byTeacher')">By Teacher</h4>
+                        <h4 class="pointer dave-padding-bot-10" ng-click="vm.clickButton('byGrade')">By Grade</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- teacher button -->
+            <button class="accordion-report" ng-class="{active: vm.teacherClick}" ng-click="vm.clickAccordion('teacher')">
+                <span>Teacher Reports</span>
+                <span class="icon">
+                    <i class="fa fa-angle-double-right"></i>
+                </span>
+            </button>
+            <!-- teacher views -->
+            <div class="panel" ng-class="{'show': vm.teacherClick}">
+                haha2
+            </div>
+        </div>
+    </div>
+</div>

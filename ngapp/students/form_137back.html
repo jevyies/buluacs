@@ -1,0 +1,824 @@
+<div class="row container-fluid">
+    <div class="col-md-12 ">
+        <div class="card" style="border:none;">
+            <div class="card-body">
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flex-row">
+                            <p class="f13">
+                                <strong>III. CHARACTER BUILDING ACTIVITIES</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flex-row">
+                            <table class="cba-table first">
+                                <tr>
+                                    <th rowspan="2" class="text-center w-300p">
+                                        CORE VALUES
+                                    </th>
+                                    <th colspan="5" class="w-210p">
+                                        <div class="flex-row pad-t-10-b-5">
+                                            <div class="form-label-start">
+                                                <p>Gr:</p>
+                                            </div>
+                                            <div class="underline-form w-40p">
+                                                <input type="text" value="I" class="text-center" disabled>
+                                            </div>
+                                            <div class="form-label-start">
+                                                <p>Sch. Yr.</p>
+                                            </div>
+                                            <div class="underline-form w-100p">
+                                                <input type="text" ng-model="vm.grade1History.school_year" class="text-center" disabled>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th colspan="5" class="w-210p">
+                                        <div class="flex-row pad-t-10-b-5">
+                                            <div class="form-label-start">
+                                                <p>Gr:</p>
+                                            </div>
+                                            <div class="underline-form w-40p">
+                                                <input type="text" value="II" class="text-center" disabled>
+                                            </div>
+                                            <div class="form-label-start">
+                                                <p>Sch. Yr.</p>
+                                            </div>
+                                            <div class="underline-form w-100p">
+                                                <input type="text" ng-model="vm.grade2History.school_year" class="text-center" disabled>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th colspan="5" class="w-210p">
+                                        <div class="flex-row pad-t-10-b-5">
+                                            <div class="form-label-start">
+                                                <p>Gr:</p>
+                                            </div>
+                                            <div class="underline-form w-40p">
+                                                <input type="text" value="III" class="text-center" disabled>
+                                            </div>
+                                            <div class="form-label-start">
+                                                <p>Sch. Yr.</p>
+                                            </div>
+                                            <div class="underline-form w-100p">
+                                                <input type="text" ng-model="vm.grade3History.school_year" class="text-center" disabled>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>1</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>2</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>3</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>4</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>F.R</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>1</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>2</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>3</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>4</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>F.R</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>1</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>2</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>3</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>4</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>F.R</strong>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center f13">MAKA-DIYOS</th>
+                                    <th colspan="15"></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Expresses one's spiritual beliefs while respecting the spiritual beliefs of others.
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaDiyosA1E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaDiyosA2E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaDiyosA3E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaDiyosA4E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaDiyosATotalE}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaDiyosA1E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaDiyosA2E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaDiyosA3E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaDiyosA4E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaDiyosATotalE}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaDiyosA1E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaDiyosA2E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaDiyosA3E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaDiyosA4E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaDiyosATotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Shows adherence to ethical principles by upholding the truth
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaDiyosB1E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaDiyosB2E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaDiyosB3E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaDiyosB4E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaDiyosBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaDiyosB1E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaDiyosB2E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaDiyosB3E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaDiyosB4E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaDiyosBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaDiyosB1E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaDiyosB2E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaDiyosB3E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaDiyosB4E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaDiyosBTotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center f13">MAKATAO</th>
+                                    <th colspan="15"></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Is sensitive to individual, social and cultural differences
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaTaoA1E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaTaoA2E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaTaoA3E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaTaoA4E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaTaoATotalE}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaTaoA1E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaTaoA2E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaTaoA3E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaTaoA4E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaTaoATotalE}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaTaoA1E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaTaoA2E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaTaoA3E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaTaoA4E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaTaoATotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Demonstrates contributions toward solidarity
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaTaoB1E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaTaoB2E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaTaoB3E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaTaoB4E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaTaoBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaTaoB1E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaTaoB2E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaTaoB3E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaTaoB4E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaTaoBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaTaoB1E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaTaoB2E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaTaoB3E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaTaoB4E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaTaoBTotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center f13">MAKA-KALIKASAN</th>
+                                    <th colspan="15"></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Cares for the environment and utilizes resources wisely, judiciously and economic- ally.
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade1CBA.Makakalikasan1E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.Makakalikasan2E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.Makakalikasan3E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.Makakalikasan4E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakakalikasanTotalE}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.Makakalikasan1E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.Makakalikasan2E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.Makakalikasan3E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.Makakalikasan4E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakakalikasanTotalE}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.Makakalikasan1E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.Makakalikasan2E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.Makakalikasan3E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.Makakalikasan4E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakakalikasanTotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center f13">MAKA-BANSA</th>
+                                    <th colspan="15"></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Demonstrates pride in being a Filipino exercise the rights and responsibilities of a Filipino citizen
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaBansaA1E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaBansaA2E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaBansaA3E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaBansaA4E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaBansaATotalE}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaBansaA1E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaBansaA2E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaBansaA3E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaBansaA4E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaBansaATotalE}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaBansaA1E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaBansaA2E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaBansaA3E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaBansaA4E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaBansaATotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-270p">
+                                                Demonstrates appropriate behavior in carrying out activities in school, community, and country.
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaBansaB1E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaBansaB2E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaBansaB3E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaBansaB4E}}</td>
+                                    <td class="text-center">{{vm.grade1CBA.MakaBansaBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaBansaB1E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaBansaB2E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaBansaB3E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaBansaB4E}}</td>
+                                    <td class="text-center">{{vm.grade2CBA.MakaBansaBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaBansaB1E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaBansaB2E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaBansaB3E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaBansaB4E}}</td>
+                                    <td class="text-center">{{vm.grade3CBA.MakaBansaBTotalE}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="flex-row">
+                            <table class="cba-table second">
+                                <tr>
+                                    <th rowspan="2" class="text-center w-300p">
+                                        CORE VALUES
+                                    </th>
+                                    <th colspan="5" class="w-210p">
+                                        <div class="flex-row pad-t-10-b-5">
+                                            <div class="form-label-start">
+                                                <p>Gr:</p>
+                                            </div>
+                                            <div class="underline-form w-40p">
+                                                <input type="text" value="IV" class="text-center" disabled>
+                                            </div>
+                                            <div class="form-label-start">
+                                                <p>Sch. Yr.</p>
+                                            </div>
+                                            <div class="underline-form w-100p">
+                                                <input type="text" ng-model="vm.grade4History.school_year" class="text-center" disabled>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th colspan="5" class="w-210p">
+                                        <div class="flex-row pad-t-10-b-5">
+                                            <div class="form-label-start">
+                                                <p>Gr:</p>
+                                            </div>
+                                            <div class="underline-form w-40p">
+                                                <input type="text" value="V" class="text-center" disabled>
+                                            </div>
+                                            <div class="form-label-start">
+                                                <p>Sch. Yr.</p>
+                                            </div>
+                                            <div class="underline-form w-100p">
+                                                <input type="text" ng-model="vm.grade5History.school_year" class="text-center" disabled>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th colspan="5" class="w-210p">
+                                        <div class="flex-row pad-t-10-b-5">
+                                            <div class="form-label-start">
+                                                <p>Gr:</p>
+                                            </div>
+                                            <div class="underline-form w-40p">
+                                                <input type="text" value="VI" class="text-center" disabled>
+                                            </div>
+                                            <div class="form-label-start">
+                                                <p>Sch. Yr.</p>
+                                            </div>
+                                            <div class="underline-form w-100p">
+                                                <input type="text" ng-model="vm.grade6History.school_year" class="text-center" disabled>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>1</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>2</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>3</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>4</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>F.R</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>1</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>2</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>3</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>4</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>F.R</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>1</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>2</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>3</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>4</strong>
+                                    </th>
+                                    <th class="text-center w-42p f11 pad-t-05">
+                                        <strong>F.R</strong>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center f13">MAKA-DIYOS</th>
+                                    <th colspan="15"></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Expresses one's spiritual beliefs while respecting the spiritual beliefs of others.
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaDiyosA1E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaDiyosA2E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaDiyosA3E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaDiyosA4E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaDiyosATotalE}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaDiyosA1E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaDiyosA2E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaDiyosA3E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaDiyosA4E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaDiyosATotalE}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaDiyosA1E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaDiyosA2E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaDiyosA3E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaDiyosA4E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaDiyosATotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Shows adherence to ethical principles by upholding the truth
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaDiyosB1E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaDiyosB2E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaDiyosB3E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaDiyosB4E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaDiyosBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaDiyosB1E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaDiyosB2E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaDiyosB3E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaDiyosB4E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaDiyosBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaDiyosB1E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaDiyosB2E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaDiyosB3E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaDiyosB4E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaDiyosBTotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center f13">MAKATAO</th>
+                                    <th colspan="15"></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Is sensitive to individual, social and cultural differences
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaTaoA1E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaTaoA2E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaTaoA3E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaTaoA4E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaTaoATotalE}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaTaoA1E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaTaoA2E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaTaoA3E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaTaoA4E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaTaoATotalE}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaTaoA1E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaTaoA2E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaTaoA3E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaTaoA4E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaTaoATotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Demonstrates contributions toward solidarity
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaTaoB1E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaTaoB2E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaTaoB3E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaTaoB4E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaTaoBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaTaoB1E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaTaoB2E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaTaoB3E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaTaoB4E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaTaoBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaTaoB1E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaTaoB2E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaTaoB3E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaTaoB4E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaTaoBTotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center f13">MAKA-KALIKASAN</th>
+                                    <th colspan="15"></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Cares for the environment and utilizes resources wisely, judiciously and economic- ally.
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade4CBA.Makakalikasan1E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.Makakalikasan2E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.Makakalikasan3E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.Makakalikasan4E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakakalikasanTotalE}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.Makakalikasan1E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.Makakalikasan2E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.Makakalikasan3E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.Makakalikasan4E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakakalikasanTotalE}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.Makakalikasan1E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.Makakalikasan2E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.Makakalikasan3E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.Makakalikasan4E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakakalikasanTotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center f13">MAKA-BANSA</th>
+                                    <th colspan="15"></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-250p">
+                                                Demonstrates pride in being a Filipino exercise the rights and responsibilities of a Filipino citizen
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaBansaA1E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaBansaA2E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaBansaA3E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaBansaA4E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaBansaATotalE}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaBansaA1E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaBansaA2E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaBansaA3E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaBansaA4E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaBansaATotalE}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaBansaA1E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaBansaA2E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaBansaA3E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaBansaA4E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaBansaATotalE}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="flex-row">
+                                            <div class="w-30p">
+                                                **
+                                            </div>
+                                            <div class="f11 w-270p">
+                                                Demonstrates appropriate behavior in carrying out activities in school, community, and country.
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaBansaB1E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaBansaB2E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaBansaB3E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaBansaB4E}}</td>
+                                    <td class="text-center">{{vm.grade4CBA.MakaBansaBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaBansaB1E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaBansaB2E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaBansaB3E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaBansaB4E}}</td>
+                                    <td class="text-center">{{vm.grade5CBA.MakaBansaBTotalE}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaBansaB1E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaBansaB2E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaBansaB3E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaBansaB4E}}</td>
+                                    <td class="text-center">{{vm.grade6CBA.MakaBansaBTotalE}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pad-t-05">
+                    <div class="col-md-12">
+                        <div class="flex-row">
+                            <div class="w-307p">&nbsp;</div>
+                            <div class="w-330p pad-l-60">
+                                <strong class="f12">AO - Always Observed</strong>
+                            </div>
+                            <div class="">
+                                <strong class="f12">RO - Rarely Observed</strong>
+                            </div>
+                        </div>
+                        <div class="flex-row">
+                            <div class="w-307p">&nbsp;</div>
+                            <div class="w-330p pad-l-60">
+                                <strong class="f12">SO - Sometimes Observed</strong>
+                            </div>
+                            <div class="">
+                                <strong class="f12">NO - Not Observed</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flex-row">
+                            <p class="f15">
+                                <strong>IV. ATTENDANCE RECORD</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flex-row">
+                            <table class="ar-table">
+                                <tr>
+                                    <th class="f12 w-90p text-center">
+                                        Grade
+                                    </th>
+                                    <th class="f12 w-150p text-center">
+                                        No. of School Days
+                                    </th>
+                                    <th class="f12 w-90p text-center">
+                                        No. of School Days Absent
+                                    </th>
+                                    <th class="f12 w-238p text-center">
+                                        Cause
+                                    </th>
+                                    <th class="f12 w-50p text-center">
+                                        No. of Times Tardy
+                                    </th>
+                                    <th class="f12 w-238p text-center">
+                                        Cause
+                                    </th>
+                                    <th class="f12 w-74p text-center">
+                                        No. of School Days Present
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">I</td>
+                                    <td class="text-center">{{vm.grade1Attendance.SD}}</td>
+                                    <td class="text-center">{{vm.grade1Attendance.SDA}}</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">{{vm.grade1Attendance.SDP}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">II</td>
+                                    <td class="text-center">{{vm.grade2Attendance.SD}}</td>
+                                    <td class="text-center">{{vm.grade2Attendance.SDA}}</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">{{vm.grade2Attendance.SDP}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">III</td>
+                                    <td class="text-center">{{vm.grade3Attendance.SD}}</td>
+                                    <td class="text-center">{{vm.grade3Attendance.SDA}}</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">{{vm.grade3Attendance.SDP}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">IV</td>
+                                    <td class="text-center">{{vm.grade4Attendance.SD}}</td>
+                                    <td class="text-center">{{vm.grade4Attendance.SDA}}</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">{{vm.grade4Attendance.SDP}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">V</td>
+                                    <td class="text-center">{{vm.grade5Attendance.SD}}</td>
+                                    <td class="text-center">{{vm.grade5Attendance.SDA}}</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">{{vm.grade5Attendance.SDP}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">VI</td>
+                                    <td class="text-center">{{vm.grade6Attendance.SD}}</td>
+                                    <td class="text-center">{{vm.grade6Attendance.SDA}}</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">{{vm.grade6Attendance.SDP}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pad-t-05">
+                    <div class="col-md-12 text-center">
+                        <strong>CERTIFICATE OF TRANSFER</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="text-align: left;">
+                        <strong>TO WHOM IT MAY CONCERN:</strong>
+                        <br>
+                        <div class="small-font">This is to certify that this is the true record of the Elementary School Permanent record of
+                            <u style="color: black;">____________________________________________</u>
+                            <u style="color: black;">____________________________________________</u>.&nbsp;&nbsp;He/She is eligible for transfer
+                            and admission to Grade/Year
+                            <u style="color: black;">_______________________</u>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <table width="900px">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px;"></th>
+                                    <th style="width: 90px;"></th>
+                                    <th style="width: 20px;"></th>
+                                    <th style="width: 50px;border-bottom: 1px solid black;height: 8px;"></th>
+                                </tr>
+                                <tr>
+                                    <th style="width: 10px;"></th>
+                                    <th style="width: 90px;"></th>
+                                    <th style="width: 20px;"></th>
+                                    <th style="width: 50px;text-align: center;font-size: 10px;">Signature</th>
+                                </tr>
+                                <tr>
+                                    <th style="width: 20px;"></th>
+                                    <th style="width: 50px;border-bottom: 1px solid black;"></th>
+                                    <th style="width: 80px;"></th>
+                                    <th style="width: 100px;border-bottom: 1px solid black;height: 15px;"></th>
+                                </tr>
+                                <tr>
+                                    <th style="width: 20px;"></th>
+                                    <th style="width: 50px;text-align: center;font-size: 10px;">Date</th>
+                                    <th style="width: 80px;"></th>
+                                    <th style="width: 100px;text-align: center;font-size: 10px;">Designation</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

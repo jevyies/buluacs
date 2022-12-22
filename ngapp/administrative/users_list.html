@@ -1,0 +1,137 @@
+<button class="accordion" ng-class="{active: vm.users}" ng-click="vm.getData()">
+    <span class="title">List of Users (Teachers)</span>
+    <span class="icon">
+        <i class="fa fa-angle-double-right"></i>
+    </span>
+</button>
+<div class="panel" ng-class="{'show': vm.users}">
+    <div class="flex-row">
+        <div class="col-md-3">
+            <input type="text" class="form-control" ng-model="vm.searchText" placeholder="Search Users..."/>
+        </div>
+    </div>
+    <div class="panel-body" ng-class="{'flex-row': vm.showSidePane}">
+        <div class="left-pane" ng-class="{'limited-list': vm.showSidePane}">
+            <div class="row" ng-class="{'flex-column': vm.showSidePane}">
+                <div class="col-md-3 bottom-margin" ng-repeat="x in vm.userList  | filter: vm.searchText track by $index">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="flex-row">
+                                <div class="flex-text">
+                                    <h4>{{x.lname}}, {{x.fname}}</h4>
+                                    <h6>
+                                        <i>{{x.name}} - {{x.section_name}}</i>
+                                    </h6>
+                                    <h6>
+                                        <i>{{x.user_level}}</i>
+                                    </h6>
+                                </div>
+                                <div class="flex-icon dropdown">
+                                    <span class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-ellipsis-v pointer"></i>
+                                    </span>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li class="pointer" ng-click="vm.editInfo(x, $index)">
+                                            <a>
+                                                <i class="fa fa-user fa-fw"></i> Edit User Info</a>
+                                        </li>
+                                        <li class="pointer" ng-click="vm.delete(x, $index)">
+                                            <a>
+                                                <i class="fa fa-trash fa-fw"></i> Remove User</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-pane" ng-if="vm.showSidePane">
+            <form class="row" ng-submit="vm.save()">
+                <div class="col-md-12">
+                    <div class="grades card">
+                        <div class="card-header">
+                            <h1>Add User/Teacher</h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="jv-form">
+                                        <label class="text-center">First Name</label>
+                                        <input type="text" class="form-control text-center" ng-model="vm.variables.fname" required focus-me="vm.focusFirstName"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="jv-form">
+                                        <label class="text-center">Last Name</label>
+                                        <input type="text" class="form-control text-center" ng-model="vm.variables.lname" required/>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="jv-form">
+                                        <label class="text-center">Username</label>
+                                        <input type="text" class="form-control text-center" ng-model="vm.variables.username" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="jv-form">
+                                        <label class="text-center">User Level</label>
+                                        <select class="form-control text-center" ng-model="vm.variables.user_level" required>
+                                            <option></option>
+                                            <option>Administrator</option>
+                                            <option>Mere User</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="jv-form">
+                                        <label class="text-center">Grade Level</label>
+                                        <select class="form-control text-center" ng-model="vm.variables.grade_id" required>
+                                            <option></option>
+                                            <option ng-repeat="x in vm.gradeLevels" ng-value="x.grade_id">{{x.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="jv-form">
+                                        <label class="text-center">Section Name</label>
+                                        <input type="text" class="form-control text-center" ng-model="vm.variables.section_name" required/>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" ng-if="vm.variables.login_id">
+                                    <div class="jv-form">
+                                        <label class="text-center">Date Created</label>
+                                        <input type="date" class="form-control text-center" ng-model="vm.variables.date_created" disabled/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button type="submit" class="btn btn-primary btn-sm">
+                                        <i class="fa fa-save"></i>&nbsp;Save</button>
+                                    <button type="button" class="btn btn-secondary btn-sm" ng-click="vm.clearFunction()">
+                                        <i class="fa fa-times"></i>&nbsp;Clear</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <button type="submit" class="btn btn-info btn-sm" ng-click="vm.showSidePane = true" ng-if="!vm.showSidePane">
+                    <i class="fa fa-user-plus"></i>&nbsp;Add User</button>
+                <button type="button" class="btn btn-secondary btn-sm" ng-if="vm.showSidePane" ng-click="vm.showSidePane = false">
+                    <i class="fa fa-times"></i>&nbsp;Back To View</button>
+            </div>
+        </div>
+    </div>
+</div>

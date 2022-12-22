@@ -1,0 +1,49 @@
+<div class="modal-content">
+	<div class="container-fluid">
+		<div class="row modal-title-div">
+			<div class="col-md-12">
+				<span ng-click="modal.close()" class="pointer modal-exit">&times;</span>
+				<h4 class="modal-title-name"><span class="fa fa-user-secret text-primary"></span>&nbsp;User Details</h4>
+			</div>
+		</div>
+	</div>
+	<form ng-submit="modal.save()">
+		<div class="modal-body">
+			<div class="row bottom-margin">
+				<div class="col-md-12 bottom-margin">
+					<table width="100%" class="table-striped">
+						<tr>
+							<td class="table-description">Section:</td>
+							<td class="table-details">{{ modal.variables.section }}</td>
+						</tr>
+						<tr>
+							<td class="table-description">Full Name:</td>
+							<td class="table-details" ng-if="!modal.edit">{{ modal.variables.user }}</td>
+							<td class="table-details" ng-if="modal.edit">
+								<input type="text" class="form-control" ng-model="modal.variables.user" />
+							</td>
+						</tr>
+						<tr>
+							<td class="table-description">User Name:</td>
+							<td class="table-details" ng-if="!modal.edit">{{ modal.variables.username }}</td>
+							<td class="table-details" ng-if="modal.edit">
+								<input type="text" class="form-control" ng-model="modal.variables.username" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-right">
+					<button type="button" class="btn btn-primary" ng-click="modal.editCred()">
+						<strong>{{ modal.editMessage }}</strong>
+					</button>
+					<button type="submit" class="btn btn-success" ng-if="modal.edit">
+						<strong>Save</strong>
+					</button>
+					<button type="button" class="btn btn-basic" ng-click="modal.close()"><strong>Close</strong></button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

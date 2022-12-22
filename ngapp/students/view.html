@@ -1,0 +1,29 @@
+<div class="student-container animated fadeIn" ng-controller="StudentCtrl as vm">
+    <div ng-include="'ngapp/common/loading/view.html'" include-replace ng-if="vm.showLoading"></div>
+    <div class="student card">
+        <div class="student-header">
+            <h1>Student Information</h1>
+        </div>
+        <div class="card-body">
+            <div class="flex-row">
+                <div class="left-side">
+                    <div ng-include="'ngapp/students/student_list.html'" include-replace></div>
+                </div>
+                <div class="right-side">
+                    <div class="add-student animation" ng-if="vm.changeView == 0">
+                        <div ng-include="'ngapp/students/blank_page.html'" include-replace></div>
+                    </div>
+                    <div class="add-student animation" ng-if="vm.changeView == 1">
+                        <div ng-include="'ngapp/students/student_info.html'" include-replace></div>
+                    </div>
+                    <div class="student-card animation" ng-if="vm.changeView == 2">
+                        <div ng-include="'ngapp/students/student_card.html'" include-replace></div>
+                    </div>
+                    <div class="student-history animation" ng-if="vm.changeView == 3">
+                        <div ng-include="'ngapp/students/student_history.html'" include-replace></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+{
+  "name": "angular-loading-overlay",
+  "version": "1.1.1",
+  "description": "Service and directive to manipulate overlays on async operations.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bsalex/angular-loading-overlay.git"
+  },
+  "scripts": {
+    "test:watch": "karma start",
+    "test": "karma start --single-run",
+    "prepush": "npm test && npm run build && git add -u && git diff-index --quiet HEAD || git commit -q -m 'Build'",
+    "watch": "webpack-dev-server --host 0.0.0.0",
+    "build": "webpack && mv source/*.d.ts dist",
+    "lint": "tslint ./source/*.ts"
+  },
+  "author": "Oleksandr Beshchuk <bs.alex.mail@gmail.com>",
+  "license": "Apache-2.0",
+  "main": "./dist/angular-loading-overlay.js",
+  "devDependencies": {
+    "@types/angular": "^1.5.20",
+    "@types/angular-mocks": "^0.0.0",
+    "@types/jasmine": "^2.5.38",
+    "@types/jquery": "^2.0.34",
+    "@types/sinon": "^1.16.32",
+    "angular": "^1.5.9",
+    "angular-mocks": "^1.5.9",
+    "bower": "^1.8.0",
+    "husky": "^0.11.9",
+    "jasmine": "^2.5.2",
+    "jasmine-core": "^2.5.2",
+    "json-loader": "^0.5.4",
+    "karma": "^1.3.0",
+    "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-growler-reporter": "0.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "https://github.com/karma-runner/karma-phantomjs-launcher.git",
+    "karma-sinon": "^1.0.5",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.0",
+    "ng-describe": "^1.8.0",
+    "phantomjs-prebuilt": "^2.1.13",
+    "sinon": "next",
+    "ts-loader": "^1.2.2",
+    "tslint": "^4.0.2",
+    "tslint-loader": "^3.2.1",
+    "typescript": "^2.1.0",
+    "typings": "^2.0.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

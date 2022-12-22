@@ -1,0 +1,83 @@
+<div class="modal-content">
+    <div class="container-fluid">
+        <div class="row modal-title-div">
+            <div class="col-md-12">
+                <span ng-click="modal.close()" class="pointer modal-exit">&times;</span>
+                <h4 class="modal-title-name">
+                    <span class="fa fa-user text-success"></span>&nbsp;Import Student</h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <form class="row bottom-margin" ng-submit="modal.search()">
+            <div class="col-md-8" ng-if="modal.searchBy == 1">
+                <div class="jvs-form">
+                    <input type="text" class="form-control text-center" ng-model="modal.LRN" ng-required="modal.searchBy == 1" placeholder="Search LRN No."
+                    />
+                </div>
+            </div>
+            <div class="col-md-8" ng-if="modal.searchBy == 2">
+                <div class="jvs-form">
+                    <input type="text" class="form-control text-center" ng-model="modal.IDNo" ng-required="modal.searchBy == 2" placeholder="Search ID No."
+                    />
+                </div>
+            </div>
+            <div class="col-md-4" ng-if="modal.searchBy == 3">
+                <div class="jvs-form">
+                    <input type="text" class="form-control text-center" ng-model="modal.LName" placeholder="Last Name" />
+                </div>
+            </div>
+            <div class="col-md-4" ng-if="modal.searchBy == 3">
+                <div class="jvs-form">
+                    <input type="text" class="form-control text-center" ng-model="modal.FName" placeholder="First Name" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="btn-group full-width">
+                    <button class="btn btn-basic btn-md" style="width:80%" type="submit">
+                        <i class="fa fa-search fa-fw"></i>Search</button>
+                    <button class="btn btn-basic btn-md dropdown-toggle" data-toggle="dropdown" style="width:20%" type="button">
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li class="pointer" ng-class="{active: modal.searchBy == 1}">
+                            <a ng-click="modal.searchBy = 1">
+                                <i class="fa fa-check fa-fw"></i> Search By LRN</a>
+                        </li>
+                        <li class="pointer" ng-class="{active: modal.searchBy == 2}">
+                            <a ng-click="modal.searchBy = 2">
+                                <i class="fa fa-check fa-fw"></i> Search By ID No</a>
+                        </li>
+                        <li class="pointer" ng-class="{active: modal.searchBy == 3}">
+                            <a ng-click="modal.searchBy = 3">
+                                <i class="fa fa-check fa-fw"></i> Search By Name</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-md-12 text-center" ng-if="modal.loading">
+                <img class="little-loading-image" src="assets/images/loading.gif">
+            </div>
+            <div class="col-md-12" ng-if="modal.searching && !modal.loading">
+                <div class="text-center" ng-if="modal.list.length == 0">
+                    <h5>
+                        <i>No results found</i>
+                    </h5>
+                </div>
+                <div ng-if="modal.list.length > 0" class="search-list">
+                    <h5>
+                        <strong>{{modal.resultFound}}</strong>
+                    </h5>
+                    <button class="accordion small" ng-class="{active: vm.users}" ng-repeat="x in modal.list" ng-click="modal.export(x)">
+                        <span class="title">{{x.lastname}}{{x.extention}}, {{x.firstname}} {{x.middle}}.</span>
+                        <span class="icon">
+                            <i class="fa fa-angle-double-right"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

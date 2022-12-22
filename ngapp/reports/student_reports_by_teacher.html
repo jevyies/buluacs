@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-text">
+                    <h5>
+                        <i class="fa fa-credit-card fa-fw"></i> <b>Report Student by Teacher</b></h5>
+                </div>
+                <div class="card-header-icon pointer flex-column justify-center">
+                    <i class="fa fa-times" ng-click="vm.changeView = 0"></i>
+                </div>
+            </div>
+            <form ng-submit="vm.saveStudent()">
+                <div class="card-body max-height">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="jvs-form">
+                                <label class="text-center">Year</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.year" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="jvs-form">
+                                <label class="text-center">Teacher Name</label>
+                                <input list="teachers" type="text" class="form-control text-center" ng-model="vm.variables.firstname" required/>
+                                <datalist id="teachers">
+                                    <option ng-repeat="x in vm.teacherList">{{x.fname}} {{x.mname}} {{x.lname}}
+                                </datalist>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>Section : </h5> <i>{{vm.section}}</i>
+                        </div>
+                        <div class="col-md-12">
+                            <table width="100%">
+                                <thead>
+                                    <tr class="table-grey-head-tr">
+                                        <th>Student Name</th>
+                                        <th>Gender</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-body-tr">
+                                        <td colspan="2" class="text-center"><i>NO DATA FOUND...</i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button ng-if="!vm.allStudent && !vm.variables.student_id" type="button" class="btn btn-warning btn-sm" ng-click="vm.exportStudent()">Import Student</button>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button ng-if="vm.variables.student_id && !vm.variables.export" type="button" class="btn btn-danger btn-sm" ng-click="vm.deleteStudent(vm.variables.student_id, vm.variables.index)">
+                                <i class="fa fa-trash"></i>&nbsp;Delete</button>
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-save"></i>&nbsp;Save</button>
+                            <button type="button" class="btn btn-basic btn-sm" ng-click="vm.cancelView()">
+                                <i class="fa fa-times"></i>&nbsp;Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

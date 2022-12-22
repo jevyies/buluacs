@@ -1,0 +1,91 @@
+<div class="student-container animated fadeIn" ng-controller="FormCtrl as vm">
+    <!-- <div ng-include="'ngapp/common/loading/view.html'" include-replace ng-if="vm.showLoading"></div> -->
+    <div class="student card">
+        <div class="student-header">
+            <h1>Generation of Form 137</h1>
+        </div>
+        <div class="card-body">
+            <form ng-submit="vm.search()" class="bottom-margin">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="jvs-form">
+                            <label class="text-center">Search Student By:</label>
+                            <select class="form-control" ng-model="vm.searchBy" required>
+                                <option ng-value="1">LRN No.</option>
+                                <!-- <option ng-value="2">ID No.</option> -->
+                                <option ng-value="3">Name</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" ng-if="vm.searchBy == 1">
+                        <div class="jvs-form">
+                            <label class="text-center">LRN No.</label>
+                            <input type="text" class="form-control text-center" ng-model="vm.LRN" ng-required="vm.searchBy == 1" />
+                        </div>
+                    </div>
+                    <div class="col-md-4" ng-if="vm.searchBy == 2">
+                        <div class="jvs-form">
+                            <label class="text-center">ID No.</label>
+                            <input type="text" class="form-control text-center" ng-model="vm.IDNo" ng-required="vm.searchBy == 2" />
+                        </div>
+                    </div>
+                    <div class="col-md-2" ng-if="vm.searchBy == 3">
+                        <div class="jvs-form">
+                            <label class="text-center">Last Name</label>
+                            <input type="text" class="form-control text-center" ng-model="vm.LName" />
+                        </div>
+                    </div>
+                    <div class="col-md-2" ng-if="vm.searchBy == 3">
+                        <div class="jvs-form">
+                            <label class="text-center">First Name</label>
+                            <input type="text" class="form-control text-center" ng-model="vm.FName" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="submit" class="btn btn-primary" style="margin-top: 24px;">
+                            <i class="fa fa-search fa-fw"></i>Search</button>
+                    </div>
+                    <div class="col-md-5 text-right">
+                        <div style="margin-top: 24px;">
+                            <strong>{{vm.message}}</strong>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row full-height">
+                <div ng-if="vm.showLoading" class="col-md-12 full-height text-center flex-column justify-center">
+                    <strong>Loading...</strong>
+                </div>
+                <div class="col-md-3 bottom-margin" ng-repeat="x in vm.list">
+                    <div class="card" ng-class="{active: vm.variables.student_id == x.student_id}">
+                        <div class="card-body pointer" ng-click="vm.clicked(x)" ng-dblclick="vm.generate(x)">
+                            <div class="flex-row">
+                                <div class="flex-text">
+                                    <h4 title="{{x.lastname}}{{x.extention}}, {{x.firstname}} {{x.middle}}.">{{x.lastname}}{{x.extention}}, {{x.firstname}} {{x.middle}}.</h4>
+                                    <h6>
+                                        <i>{{x.sex}}</i>
+                                    </h6>
+                                    <h6>
+                                        <i>ID No. - {{x.id_no}}</i>
+                                    </h6>
+                                    <h6>
+                                        <i>LRN No - {{x.lrn}}</i>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="button" class="btn btn-info btn-sm" ng-click="vm.generate(vm.variables)" ng-if="vm.variables.student_id">
+                            <i class="fa fa-file-code-o fa-fw"></i>&nbsp;Generate Form</button>
+                        <button type="button" class="btn btn-secondary btn-sm" ng-click="vm.cancelView()">
+                            <i class="fa fa-times fa-fw"></i>&nbsp;Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

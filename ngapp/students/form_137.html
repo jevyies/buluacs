@@ -1,0 +1,597 @@
+<div class="row container-fluid">
+    <div class="col-md-12 ">
+        <div class="card" style="border:none;">
+            <div id="printMeFront">
+                <br>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="assets/images/kagawaran.png" class="form-images left">
+                    </div>
+                    <div class="col-md-8 text-center form-header">
+                        <p class="f14-l8">
+                            <strong>Republika ng Pilipinas</strong>
+                        </p>
+                        <p class="f11">
+                            <i>(Republic of the Philippines)</i>
+                        </p>
+                        <p class="f14-l8">
+                            <strong>Kagawaran ng Edukasyon</strong>
+                        </p>
+                        <p class="f11">
+                            <i>(Department of Education)</i>
+                        </p>
+                        <p class="f14-l8">
+                            <strong>Rehiyon-X</strong>
+                        </p>
+                        <p class="f11">
+                            <i>(Region 10)</i>
+                        </p>
+                        <p class="f15-l8">
+                            <strong>SANGAY NG CAGAYAN DE ORO CITY</strong>
+                        </p>
+                        <p class="f11 bottom-margin-1">
+                            <i>(SCHOOLS DIVISION OF CAGAYAN DE ORO CITY)</i>
+                        </p>
+                        <p class="f16-l8-ts">
+                            <strong>PALAGIANG TALAAN SA MABABANG PAARALAN</strong>
+                        </p>
+                        <p class="f12">(ELEMENTARY SCHOOL PERMANENT RECORD)</p>
+                    </div>
+                    <div class="col-md-2 ">
+                        <img src="assets/images/deped.png" class="form-images right">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <div class="flex-row reverse pad-lr-45">
+                            <div class="underline-form w-180p">
+                                <input type="text" ng-model="vm.variables.lrn" class="text-center" disabled>
+                            </div>
+                            <div class="form-label-start">
+                                <p>LRN:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flex-row pad-lr-30">
+                            <div class="form-label-start">
+                                <p>Pangalan</p>
+                                <label class="text-center">(Name)</label>
+                            </div>
+                            <div class="underline-form w-150p">
+                                <input type="text" ng-model="vm.variables.lastname" class="text-center" disabled>
+                                <label class="text-center">Apelyido</label>
+                            </div>
+                            <div class="underline-form w-250p">
+                                <input type="text" ng-model="vm.variables.firstname" class="text-center" disabled>
+                                <label class="text-center">Unang Pangalan</label>
+                            </div>
+                            <div class="underline-form w-15p">
+                                <input type="text" ng-model="vm.variables.middle" class="text-center" disabled>
+                                <label class="text-center">M.I</label>
+                            </div>
+                            <div class="space-between-20 form-label-start">
+                                <p>Sangay</p>
+                            </div>
+                            <div class="underline-form w-120fp">
+                                <input type="text" ng-model="vm.variables.division" class="text-center" disabled>
+                                <label class="text-center">(Division)</label>
+                            </div>
+                            <div class="space-between-20 form-label-start">
+                                <p>Paaralan</p>
+                            </div>
+                            <div class="underline-form w-183p">
+                                <input type="text" ng-model="vm.variables.schoolName" class="text-center" disabled>
+                                <label class="text-center">(School)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flex-row pad-lr-30">
+                            <div class="form-label-start">
+                                <p>Kasarian</p>
+                                <label class="text-center">(Sex)</label>
+                            </div>
+                            <div class="underline-form w-50p">
+                                <input type="text" ng-model="vm.variables.sexI" class="text-center" disabled>
+                            </div>
+                            <div class="space-between-20 form-label-start">
+                                <p>Petsa ng Kapanganakan</p>
+                            </div>
+                            <div class="underline-form w-150p">
+                                <input type="text" ng-model="vm.variables.dob" class="text-center" disabled>
+                                <label class="text-center">(Date of Birth)</label>
+                            </div>
+                            <div class="space-between-20 form-label-start">
+                                <p>Pook</p>
+                                <label class="text-center">(Place)</label>
+                            </div>
+                            <div class="underline-form w-215p">
+                                <input type="text" ng-model="vm.variables.address" class="text-center" disabled>
+                                <label class="text-center">Bayan/Lalawigan/Lungsod (Town/Province/City)</label>
+                            </div>
+                            <div class="space-between-20 form-label-start">
+                                <p>Petsa ng Pagpasok</p>
+                            </div>
+                            <div class="underline-form w-112p">
+                                <input type="text" ng-model="vm.variables.date_of_entrance" class="text-center" disabled>
+                                <label class="text-center">(Date of Entrance)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flex-row pad-lr-30">
+                            <div class="form-label-start">
+                                <p>Magulang/Tagapag-alaga</p>
+                                <label class="text-center">(Parent / Guardian)</label>
+                            </div>
+                            <div class="underline-form w-250p">
+                                <input type="text" ng-model="vm.variables.guardian" class="text-center" disabled>
+                                <label class="text-center">Pangalan</label>
+                                <label class="text-center">(Name)</label>
+                            </div>
+                            <div class="underline-form w-250p">
+                                <input type="text" ng-model="vm.variables.guardian_address" class="text-center" disabled>
+                                <label class="text-center">Tirahan</label>
+                                <label class="text-center">(Address)</label>
+                            </div>
+                            <div class="underline-form w-255p">
+                                <input type="text" ng-model="vm.variables.guardian_occupation" class="text-center" disabled>
+                                <label class="text-center">Hanapbuhay</label>
+                                <label class="text-center">(Occupation)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center flex-column">
+                        <p class="fw-900">PAG-UNLAD SA MABABANG PAARALAN</p>
+                        <p class="f-11">(ELEMENTARY SCHOOL PROGRESS)</p>
+                    </div>
+                </div>
+                <div ng-if="!vm.showLoading">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div class="w-430p flex-row">
+                                    <div class="form-label-start">
+                                        <p>Grade I - School</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-250p">
+                                        <input type="text" ng-model="vm.grade1History.school_name" disabled class="text-center">
+                                    </div>
+                                </div>
+                                <div class="space-between-40 w-430p flex-row">
+                                    <div class="form-label-start">
+                                        <p>Grade II - School</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-250p">
+                                        <input type="text" ng-model="vm.grade2History.school_name" disabled class="text-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div class="w-430p flex-row">
+                                    <div class="form-label-start">
+                                        <p>School Year</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-273p">
+                                        <input type="text" ng-model="vm.grade1History.school_year" disabled class="text-center">
+                                    </div>
+                                </div>
+                                <div class="space-between-40 w-430p flex-row">
+                                    <div class="form-label-start">
+                                        <p>School Year</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-273p">
+                                        <input type="text" ng-model="vm.grade2History.school_year" disabled class="text-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div>
+                                    <table class="grade-form-list">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2" class="w-200p">Learning Areas</th>
+                                                <th colspan="4" class="w-120p">Periodic Rating</th>
+                                                <th rowspan="2" class="w-50p">Final Rating</th>
+                                                <th rowspan="2" class="w-60p">Remarks</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="w-30p">1</th>
+                                                <th class="w-30p">2</th>
+                                                <th class="w-30p">3</th>
+                                                <th class="w-30p">4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="x in vm.grade1Subjects">
+                                                <td ng-if="x.is_detail === 'N'" class="primary-subject">{{x.subject_name}}</td>
+                                                <td ng-if="x.is_detail === 'Y'" class="secondary-subject">*{{x.subject_name}}</td>
+                                                <td class="text-center str-td">{{x.first_value}}</td>
+                                                <td class="text-center str-td">{{x.second_value}}</td>
+                                                <td class="text-center str-td">{{x.third_value}}</td>
+                                                <td class="text-center str-td">{{x.fourth_value}}</td>
+                                                <td class="text-center str-td">{{x.average_value}} {{x.average}}</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong>General Average</strong>
+                                                </td>
+                                                <td class="text-center str-td">{{vm.grade1Average.firstValue}}</td>
+                                                <td class="text-center str-td">{{vm.grade1Average.secondValue}}</td>
+                                                <td class="text-center str-td">{{vm.grade1Average.thirdValue}}</td>
+                                                <td class="text-center str-td">{{vm.grade1Average.fourthValue}}</td>
+                                                <td class="text-center str-td">{{vm.grade1Average.FAValue}} {{vm.grade1Average.FA}}</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="space-between-40">
+                                    <table class="grade-form-list">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2" class="w-200p">Learning Areas</th>
+                                                <th colspan="4" class="w-120p">Periodic Rating</th>
+                                                <th rowspan="2" class="w-50p">Final Rating</th>
+                                                <th rowspan="2" class="w-60p">Remarks</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="w-30p">1</th>
+                                                <th class="w-30p">2</th>
+                                                <th class="w-30p">3</th>
+                                                <th class="w-30p">4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="x in vm.grade2Subjects">
+                                                <td ng-if="x.is_detail === 'N'" class="primary-subject">{{x.subject_name}}</td>
+                                                <td ng-if="x.is_detail === 'Y'" class="secondary-subject">*{{x.subject_name}}</td>
+                                                <td class="text-center str-td">{{x.first_value}}</td>
+                                                <td class="text-center str-td">{{x.second_value}}</td>
+                                                <td class="text-center str-td">{{x.third_value}}</td>
+                                                <td class="text-center str-td">{{x.fourth_value}}</td>
+                                                <td class="text-center str-td">{{x.average_value}} {{x.average}}</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong>General Average</strong>
+                                                </td>
+                                                <td class="text-center str-td">{{vm.grade2Average.firstValue}}</td>
+                                                <td class="text-center str-td">{{vm.grade2Average.secondValue}}</td>
+                                                <td class="text-center str-td">{{vm.grade2Average.thirdValue}}</td>
+                                                <td class="text-center str-td">{{vm.grade2Average.fourthValue}}</td>
+                                                <td class="text-center str-td">{{vm.grade2Average.FAValue}} {{vm.grade2Average.FA}}</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div class="space-between-5 form-label-start">
+                                    <p>Eligible for Admission to Grade</p>
+                                </div>
+                                <div class="space-between-10 underline-form w-100p">
+                                    <input type="text" class="text-center" disabled>
+                                </div>
+                                <div class="space-between-195 form-label-start">
+                                    <p>Eligible for Admission to Grade</p>
+                                </div>
+                                <div class="space-between-10 underline-form w-100p">
+                                    <input type="text" class="text-center" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row t10">
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div class="w-430p flex-row">
+                                    <div class="form-label-start">
+                                        <p>Grade III - School</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-250p">
+                                        <input type="text" ng-model="vm.grade3History.school_name" disabled class="text-center">
+                                    </div>
+                                </div>
+                                <div class="space-between-40 w-430p flex-row">
+                                    <div class="form-label-start">
+                                        <p>Grade IV - School</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-250p">
+                                        <input type="text" ng-model="vm.grade4History.school_name" disabled class="text-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div class="w-430p flex-row">
+                                    <div class="form-label-start">
+                                        <p>School Year</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-273p">
+                                        <input type="text" ng-model="vm.grade3History.school_year" disabled class="text-center">
+                                    </div>
+                                </div>
+                                <div class="space-between-40 w-430p flex-row">
+                                    <div class="form-label-start">
+                                        <p>School Year</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-273p">
+                                        <input type="text" ng-model="vm.grade4History.school_year" disabled class="text-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div>
+                                    <table class="grade-form-list">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2" class="w-200p">Learning Areas</th>
+                                                <th colspan="4" class="w-120p">Periodic Rating</th>
+                                                <th rowspan="2" class="w-50p">Final Rating</th>
+                                                <th rowspan="2" class="w-60p">Remarks</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="w-30p">1</th>
+                                                <th class="w-30p">2</th>
+                                                <th class="w-30p">3</th>
+                                                <th class="w-30p">4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="x in vm.grade3Subjects">
+                                                <td ng-if="x.subject_name === 'Araling Panlipunan (AP)' && x.is_detail === 'N'" class="primary-subject">
+                                                    <br>{{x.subject_name}}</td>
+                                                <td ng-if="x.subject_name !== 'Araling Panlipunan (AP)' && x.is_detail === 'N'" class="primary-subject">{{x.subject_name}}</td>
+                                                <td ng-if="x.subject_name !== 'Araling Panlipunan (AP)' && x.is_detail === 'Y'" class="secondary-subject">*{{x.subject_name}}</td>
+                                                <td class="text-center str-td">{{x.first_grading}}</td>
+                                                <td class="text-center str-td">{{x.second_grading}}</td>
+                                                <td class="text-center str-td">{{x.third_grading}}</td>
+                                                <td class="text-center str-td">{{x.fourth_grading}}</td>
+                                                <td class="text-center str-td">{{x.average}}</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong>General Average</strong>
+                                                </td>
+                                                <td class="text-center str-td">{{vm.grade3Average.first}}</td>
+                                                <td class="text-center str-td">{{vm.grade3Average.second}}</td>
+                                                <td class="text-center str-td">{{vm.grade3Average.third}}</td>
+                                                <td class="text-center str-td">{{vm.grade3Average.fourth}}</td>
+                                                <td class="text-center str-td">{{vm.grade3Average.FA}}</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="space-between-40">
+                                    <table class="grade-form-list">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2" class="w-200p">Learning Areas</th>
+                                                <th colspan="4" class="w-120p">Periodic Rating</th>
+                                                <th rowspan="2" class="w-50p">Final Rating</th>
+                                                <th rowspan="2" class="w-60p">Remarks</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="w-30p">1</th>
+                                                <th class="w-30p">2</th>
+                                                <th class="w-30p">3</th>
+                                                <th class="w-30p">4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="x in vm.grade4Subjects">
+                                                <td ng-if="x.is_detail === 'N'" class="primary-subject">{{x.subject_name}}</td>
+                                                <td ng-if="x.is_detail === 'Y'" class="secondary-subject">*{{x.subject_name}}</td>
+                                                <td class="text-center str-td">{{x.first_grading}}</td>
+                                                <td class="text-center str-td">{{x.second_grading}}</td>
+                                                <td class="text-center str-td">{{x.third_grading}}</td>
+                                                <td class="text-center str-td">{{x.fourth_grading}}</td>
+                                                <td class="text-center str-td">{{x.average}}</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong>General Average</strong>
+                                                </td>
+                                                <td class="text-center str-td">{{vm.grade4Average.first}}</td>
+                                                <td class="text-center str-td">{{vm.grade4Average.second}}</td>
+                                                <td class="text-center str-td">{{vm.grade4Average.third}}</td>
+                                                <td class="text-center str-td">{{vm.grade4Average.fourth}}</td>
+                                                <td class="text-center str-td">{{vm.grade4Average.FA}}</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div class="space-between-5 form-label-start">
+                                    <p>Eligible for Admission to Grade</p>
+                                </div>
+                                <div class="space-between-10 underline-form w-100p">
+                                    <input type="text" disabled class="text-center">
+                                </div>
+                                <div class="space-between-195 form-label-start">
+                                    <p>Eligible for Admission to Grade</p>
+                                </div>
+                                <div class="space-between-10 underline-form w-100p">
+                                    <input type="text" disabled class="text-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row t10">
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div class="w-430p flex-row">
+                                    <div class="form-label-start">
+                                        <p>Grade V - School</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-250p">
+                                        <input type="text" ng-model="vm.grade5History.school_name" disabled class="text-center">
+                                    </div>
+                                </div>
+                                <div class="w-430p space-between-40 flex-row">
+                                    <div class="form-label-start">
+                                        <p>Grade VI - School</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-250p">
+                                        <input type="text" ng-model="vm.grade6History.school_name" disabled class="text-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div class="w-430p flex-row">
+                                    <div class="form-label-start">
+                                        <p>School Year</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-273p">
+                                        <input type="text" ng-model="vm.grade5History.school_year" disabled class="text-center">
+                                    </div>
+                                </div>
+                                <div class="w-430p space-between-40 flex-row">
+                                    <div class="form-label-start">
+                                        <p>School Year</p>
+                                    </div>
+                                    <div class="space-between-10 underline-form w-273p">
+                                        <input type="text" ng-model="vm.grade6History.school_year" disabled class="text-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div>
+                                    <table class="grade-form-list">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2" class="w-200p">Learning Areas</th>
+                                                <th colspan="4" class="w-120p">Periodic Rating</th>
+                                                <th rowspan="2" class="w-50p">Final Rating</th>
+                                                <th rowspan="2" class="w-60p">Remarks</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="w-30p">1</th>
+                                                <th class="w-30p">2</th>
+                                                <th class="w-30p">3</th>
+                                                <th class="w-30p">4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="x in vm.grade5Subjects">
+                                                <td ng-if="x.is_detail === 'N'" class="primary-subject">{{x.subject_name}}</td>
+                                                <td ng-if="x.is_detail === 'Y'" class="secondary-subject">*{{x.subject_name}}</td>
+                                                <td class="text-center str-td">{{x.first_grading}}</td>
+                                                <td class="text-center str-td">{{x.second_grading}}</td>
+                                                <td class="text-center str-td">{{x.third_grading}}</td>
+                                                <td class="text-center str-td">{{x.fourth_grading}}</td>
+                                                <td class="text-center str-td">{{x.average}}</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong>General Average</strong>
+                                                </td>
+                                                <td class="text-center str-td">{{vm.grade5Average.first}}</td>
+                                                <td class="text-center str-td">{{vm.grade5Average.second}}</td>
+                                                <td class="text-center str-td">{{vm.grade5Average.third}}</td>
+                                                <td class="text-center str-td">{{vm.grade5Average.fourth}}</td>
+                                                <td class="text-center str-td">{{vm.grade5Average.FA}}</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="space-between-40">
+                                    <table class="grade-form-list">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2" class="w-200p">Learning Areas</th>
+                                                <th colspan="4" class="w-120p">Periodic Rating</th>
+                                                <th rowspan="2" class="w-50p">Final Rating</th>
+                                                <th rowspan="2" class="w-60p">Remarks</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="w-30p">1</th>
+                                                <th class="w-30p">2</th>
+                                                <th class="w-30p">3</th>
+                                                <th class="w-30p">4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="x in vm.grade6Subjects">
+                                                <td ng-if="x.is_detail === 'N'" class="primary-subject">{{x.subject_name}}</td>
+                                                <td ng-if="x.is_detail === 'Y'" class="secondary-subject">*{{x.subject_name}}</td>
+                                                <td class="text-center str-td">{{x.first_grading}}</td>
+                                                <td class="text-center str-td">{{x.second_grading}}</td>
+                                                <td class="text-center str-td">{{x.third_grading}}</td>
+                                                <td class="text-center str-td">{{x.fourth_grading}}</td>
+                                                <td class="text-center str-td">{{x.average}}</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <strong>General Average</strong>
+                                                </td>
+                                                <td class="text-center str-td">{{vm.grade6Average.first}}</td>
+                                                <td class="text-center str-td">{{vm.grade6Average.second}}</td>
+                                                <td class="text-center str-td">{{vm.grade6Average.third}}</td>
+                                                <td class="text-center str-td">{{vm.grade6Average.fourth}}</td>
+                                                <td class="text-center str-td">{{vm.grade6Average.FA}}</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="flex-row pad-lr-030">
+                                <div class="space-between-5 form-label-start">
+                                    <p>Eligible for Admission to Grade</p>
+                                </div>
+                                <div class="space-between-10 underline-form w-100p">
+                                    <input type="text" disabled class="text-center">
+                                </div>
+                                <div class="space-between-195 form-label-start">
+                                    <p>Eligible for Admission to Grade</p>
+                                </div>
+                                <div class="space-between-10 underline-form w-100p">
+                                    <input type="text" disabled class="text-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

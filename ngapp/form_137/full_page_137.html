@@ -1,0 +1,21 @@
+<div ng-include="'ngapp/common/loading/view.html'" ng-if="vm.showLoading"></div>
+<div class="flex-row hover-top">
+    <a ng-click="vm.print('printThis')">
+        <i class="fa fa-print fa-fw"></i>&nbsp;Print</a>
+    <a ng-click="vm.flipped = !vm.flipped">
+        <i class="fa fa-repeat fa-fw"></i>Flip to {{ vm.flipped ? 'Front' : 'Back'}} Side</a>
+    <a ng-click="vm.close()">
+        <i class="fa fa-times fa-fw"></i>&nbsp;Close</a>
+</div>
+<div ng-class="{'is-flipped': !vm.flipped}">
+    <div ng-if="!vm.flipped">
+        <div id="printFront">
+            <div ng-include="'ngapp/students/form_137.html'" include-replace></div>
+        </div>
+    </div>
+    <div ng-if="vm.flipped">
+        <div id="printBack">
+            <div ng-include="'ngapp/students/form_137back.html'" include-replace></div>
+        </div>
+    </div>
+</div>

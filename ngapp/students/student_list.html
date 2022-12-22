@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-md-12">
+        <p>Student List</p>
+    </div>
+</div>
+<div class="row searching">
+    <div class="col-md-12">
+        <input type="text" class="form-control" placeholder="Search Student Here..." ng-model="vm.searchText">
+    </div>
+</div>
+<div class="row student-list">
+    <div class="col-md-12 text-center" ng-if="vm.lists.length == 0">
+        <h5>
+            <i>No results found</i>
+        </h5>
+    </div>
+    <div class="col-md-12" ng-if="vm.lists.length > 0">
+        <div class="flex-column" infinite-scroll='vm.nextPage()' infinite-scroll-disabled="!vm.loadingDone" infinite-scroll-container='".student-list"'
+            infinite-scroll-distance="1" infinite-scroll-parent="true" context-menu="vm.rightClickMenu()">
+            <div class="card pointer" ng-repeat="x in vm.lists | filter: vm.searchText track by $index" ng-class="{active: vm.variables.student_id == x.student_id}">
+                <div class="card-body">
+                    <div class="flex-row">
+                        <div class="flex-text pointer" ng-click="vm.editInfo(x, $index)">
+                            <div class="flex-row">
+                                <label class="check-container" ng-if="vm.multipleSelection">
+                                    <input type="checkbox" ng-model="x.checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <h4>{{x.lastname}}{{x.extention}}, {{x.firstname}} {{x.middle}}.</h4>
+                            </div>
+                            <h6>
+                                <i>{{x.age}} yrs old</i>
+                            </h6>
+                            <h6>
+                                <i>{{x.sex}}</i>
+                            </h6>
+                        </div>
+                        <div class="flex-icon dropdown">
+                            <span class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-ellipsis-v pointer"></i>
+                            </span>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li class="pointer" ng-click="vm.editInfo(x, $index)">
+                                    <a>
+                                        <i class="fa fa-user fa-fw"></i> Student Profile</a>
+                                </li>
+                                <li ng-if="!vm.allStudent" class="pointer" ng-click="vm.reportCard(x, $index)">
+                                    <a>
+                                        <i class="fa fa-credit-card fa-fw"></i> Report Card
+                                    </a>
+                                </li>
+                                <li class="pointer" ng-click="vm.viewHistory(x, $index)">
+                                    <a>
+                                        <i class="fa fa-wpforms fa-fw"></i> Student History
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" ng-if="!vm.loadingDone && !vm.stopLoading">
+            <img class="loading-image" src="assets/images/loading.gif">
+        </div>
+    </div>
+</div>
+<div class="row bottom-margin">
+    <div class="col-md-12">
+        <button type="button" class="btn btn-success btn-sm btn-block" ng-click="vm.editInfo('new')" ng-if="!vm.multipleSelection">
+            <i class="fa fa-user-plus"></i>&nbsp;Add New Student
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm btn-block" ng-click="vm.nextLevel()" ng-if="vm.multipleSelection">
+            <i class="fa fa-paper-plane"></i>&nbsp;Send to Next Level
+        </button>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="modal-content">
+    <div ng-include="'ngapp/common/loading/view.html'" include-replace ng-if="modal.showLoading"></div>
+    <div class="container-fluid">
+        <div class="row modal-title-div">
+            <div class="col-md-12">
+                <span ng-click="modal.close()" class="pointer modal-exit">&times;</span>
+                <h4 class="modal-title-name">
+                    <span class="fa fa-graduation-cap text-success"></span>&nbsp;Add Student History</h4>
+            </div>
+        </div>
+    </div>
+    <form ng-submit="modal.save()">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="jvs-form">
+                        <label class="text-center">Status</label>
+                        <select class="form-control text-center" ng-model="modal.variables.status" required>
+                            <option>PREVIOUS</option>
+                            <option>ACTIVE</option>
+                            <option>READY</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="jvs-form">
+                        <label class="text-center">Grade</label>
+                        <select class="form-control text-center" ng-model="modal.variables.grade" required ng-change="modal.changeGrade(modal.variables.grade)">
+                            <option></option>
+                            <option ng-value="x.grade_id" ng-repeat="x in modal.gradeList">{{x.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="jvs-form">
+                        <label class="text-center">Section</label>
+                        <input type="text" class="form-control text-center" ng-model="modal.variables.section_name" ng-disabled="modal.variables.status !== 'PREVIOUS'"
+                            required/>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="jvs-form">
+                        <label class="text-center">Age</label>
+                        <input type="text" only-numbers-less-than-100 class="form-control text-center" ng-model="modal.variables.age" required/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="jvs-form">
+                        <label class="text-center">Teacher</label>
+                        <input type="text" class="form-control text-center" ng-model="modal.variables.teacher_name" ng-required="modal.variables.status === 'PREVIOUS'"
+                            ng-disabled="modal.variables.status === 'READY'" ng-if="modal.variables.status !== 'ACTIVE'" />
+                        <select class="form-control text-center" ng-model="modal.variables.teacher" ng-required="modal.variables.status === 'ACTIVE'"
+                            ng-if="modal.variables.status === 'ACTIVE'" ng-change="modal.getSection(modal.variables.teacher)">
+                            <option></option>
+                            <option ng-value="x.login_id" ng-repeat="x in modal.filteredUser">{{x.fullname}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="jvs-form">
+                        <label class="text-center">Principal</label>
+                        <input type="text" class="form-control text-center" ng-model="modal.variables.principal" required ng-disabled="modal.variables.status !== 'PREVIOUS'"
+                        />
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="jvs-form">
+                        <label class="text-center">School Name</label>
+                        <input type="text" class="form-control text-center" ng-model="modal.variables.school_name" required ng-disabled="modal.variables.status !== 'PREVIOUS'"
+                        />
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="jvs-form">
+                        <label class="text-center">School Year</label>
+                        <input type="text" class="form-control text-center" ng-model="modal.variables.school_year" required mask="0000-0000" only-numbers
+                            ng-disabled="modal.variables.status !== 'PREVIOUS'" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button type="submit" class="btn btn-primary btn-sm" ng-if="!modal.variables.history_id">
+                        <i class="fa fa-save"></i>&nbsp;Save</button>
+                    <button type="button" class="btn btn-secondary btn-sm" ng-click="modal.close()">
+                        <i class="fa fa-times"></i>&nbsp;Cancel</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

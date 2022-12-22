@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-text">
+                    <h5>
+                        <i class="fa fa-credit-card fa-fw"></i>Student Report Card</h5>
+                </div>
+                <div class="card-header-icon pointer flex-column justify-center">
+                    <i class="fa fa-times" ng-click="vm.changeView = 0"></i>
+                </div>
+            </div>
+            <div class="card-body">
+                <!-- <div class="student-card-header">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="jv-form">
+                                <label class="flex-column justify-flex-end">Name:</label>
+                                <input type="text" class="form-control" ng-model="vm.variables.fullname" disabled/>
+                            </div>
+                        </div>
+                        <div class="col-md-offset-4 col-md-4">
+                            <div class="jv-form">
+                                <label class="flex-column justify-flex-end">Grade:</label>
+                                <input type="text" class="form-control" ng-model="vm.grade" disabled/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="jv-form">
+                                <label class="flex-column justify-flex-end">Section:</label>
+                                <input type="text" class="form-control" ng-model="vm.section" disabled/>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <ul class="tabrow">
+                    <li ng-class="{'selected': vm.side == 1}" ng-click="vm.side = 1" class="pointer">
+                        <a>LEARNING PROGRESS & ACHIEVEMENT</a>
+                    </li>
+                    <li ng-class="{'selected': vm.side == 2}" ng-click="vm.side = 2" class="pointer">
+                        <a>LEARNER'S OBSERVED VALUES</a>
+                    </li>
+                    <li ng-class="{'selected': vm.side == 3}" ng-click="vm.side = 3" class="pointer">
+                        <a>ATTENDANCE</a>
+                    </li>
+                    <li ng-class="{'selected': vm.side == 4}" ng-click="vm.side = 4" class="pointer">
+                        <a>FRONT</a>
+                    </li>
+                </ul>
+                <div class="student-card-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="student-report-card-outer">
+                                <div class="animation" ng-if="vm.side == 1" ng-include="'ngapp/students/front_left_card.html'"></div>
+                                <div class="animation" ng-if="vm.side == 2" ng-include="'ngapp/students/front_right_card.html'"></div>
+                                <div class="animation" ng-if="vm.side == 3" ng-include="'ngapp/students/back_left_card.html'"></div>
+                                <div class="animation" ng-if="vm.side == 4" ng-include="'ngapp/students/back_right_card.html'"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-secondary btn-sm" ng-click="vm.editInfo(vm.variables, vm.variables.index)">
+                            <i class="fa fa-chevron-left"></i>&nbsp;Back to Profile</button>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button type="button" class="btn btn-dark btn-sm" ng-click="vm.viewFullPage()">
+                            <i class="fa fa-save fa-fw"></i>&nbsp;View in Full Page</button>
+                        <button type="button" ng-click="vm.saveCard(vm.side)" class="btn btn-primary btn-sm">
+                            <i class="fa fa-save fa-fw"></i>&nbsp;Save</button>
+                        <button type="button" class="btn btn-secondary btn-sm" ng-click="vm.cancelView()">
+                            <i class="fa fa-times fa-fw"></i>&nbsp;Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

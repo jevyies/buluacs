@@ -1,0 +1,471 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3>Student History</h3>
+            </div>
+            <div class="card-body">
+                <ul class="tabrow">
+                    <li ng-if="vm.historyList.length == 0" class="selected">
+                        Click the plus button to add history
+                    </li>
+                    <li title="Double click to know the information" ng-if="vm.historyList.length > 0" ng-repeat="x in vm.historyList track by $index" ng-class="{'selected': vm.history_id == x.history_id}"
+                        ng-click="vm.getSubjectGrade(x, $index)" ng-dblclick="vm.openAddForm(x, $index)" class="pointer">
+                        <a>{{x.level_name}}</a>
+                        <i class="fa fa-times fa-fw" ng-if="vm.allStudent" ng-click="vm.deleteHistory(x, $index)"></i>
+                    </li>
+                    <li ng-if="vm.allStudent" class="plus pointer" ng-click="vm.openAddForm()">
+                        <i class="fa fa-plus"></i>
+                    </li>
+                </ul>
+                <div class="tab-content max-height">
+                    <div class="flex-row">
+                        <div class="buttons" ng-if="vm.filteredSubjects.length > 0">
+                            <button type="button" class="btn btn-lg btn-basic text-width" ng-class="{active: vm.historySide === 'grades'}" ng-click="vm.historySide = 'grades'">Grades</button>
+                            <button type="button" class="btn btn-lg btn-basic text-width" ng-class="{active: vm.historySide === 'attendance'}" ng-click="vm.historySide = 'attendance'">Attendance</button>
+                            <button type="button" class="btn btn-lg btn-basic text-width" ng-class="{active: vm.historySide === 'moral'}" ng-click="vm.historySide = 'moral'">Moral</button>
+                        </div>
+                        <div ng-if="vm.historySide === 'grades'">
+                            <table class="student-report-card-inner table-card" ng-if="vm.filteredSubjects.length > 0">
+                                <tr class="table-card-header">
+                                    <th rowspan="2" class="text-center">Learning Areas</th>
+                                    <th colspan="5" class="text-center">Grading Period</th>
+                                    <th rowspan="2" class="text-center">Remarks</th>
+                                </tr>
+                                <tr class="table-grading-header">
+                                    <th class="text-center">1st</th>
+                                    <th class="text-center">2nd</th>
+                                    <th class="text-center">3rd</th>
+                                    <th class="text-center">4th</th>
+                                    <th class="text-center">Final Grade</th>
+                                </tr>
+                                <tr class="table-grading-header" ng-repeat="x in vm.filteredSubjects">
+                                    <td>{{x.subject_name}}</td>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="x.first_grading" ng-change="vm.calculateAverage(x, 'history')" ng-disabled="!vm.allStudent"
+                                            only-numbers-less-than-100>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="x.second_grading" ng-change="vm.calculateAverage(x, 'history')" ng-disabled="!vm.allStudent"
+                                            only-numbers-less-than-100>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="x.third_grading" ng-change="vm.calculateAverage(x, 'history')" ng-disabled="!vm.allStudent"
+                                            only-numbers-less-than-100>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="x.fourth_grading" ng-change="vm.calculateAverage(x, 'history')" ng-disabled="!vm.allStudent"
+                                            only-numbers-less-than-100>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="x.average" disabled>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="x.remarks" disabled>
+                                    </th>
+                                </tr>
+                                <tr class="table-grading-average">
+                                    <th>
+                                        <i>General Average</i>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="vm.firstGAH" disabled>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="vm.secondGAH" disabled>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="vm.thirdGAH" disabled>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="vm.fourthGAH" disabled>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="vm.averageGAH" disabled>
+                                    </th>
+                                    <th>
+                                        <input type="text" class="text-center" ng-model="vm.remarksGAH" disabled>
+                                    </th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div ng-if="vm.historySide === 'attendance'">
+                            <table class="student-report-card-inner attendance-card">
+                                <tr>
+                                    <th class="text-center">&nbsp;</th>
+                                    <th class="text-center">Jun</th>
+                                    <th class="text-center">Jul</th>
+                                    <th class="text-center">Aug</th>
+                                    <th class="text-center">Sept</th>
+                                    <th class="text-center">Oct</th>
+                                    <th class="text-center">Nov</th>
+                                    <th class="text-center">Dec</th>
+                                    <th class="text-center">Jan</th>
+                                    <th class="text-center">Feb</th>
+                                    <th class="text-center">Mar</th>
+                                    <th class="text-center">Total</th>
+                                </tr>
+                                <tr ng-repeat="x in vm.filteredAttendance track by $index">
+                                    <td class="text-left">{{x.particulars}}</td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" only-numbers ng-model="x.Jun" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" only-numbers ng-model="x.Jul" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" only-numbers ng-model="x.Aug" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" only-numbers ng-model="x.Sep" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" only-numbers ng-model="x.Oct" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" only-numbers ng-model="x.Nov" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" only-numbers ng-model="x.Dec" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" only-numbers ng-model="x.Jan" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" only-numbers ng-model="x.Feb" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" only-numbers ng-model="x.Mar" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="text" class="text-center" disabled ng-model="x.Total" ng-change="vm.calculateDays(x)">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div ng-if="vm.historySide === 'moral'">
+                            <table class="student-report-card-inner table-card">
+                                <tr class="table-card-header">
+                                    <th rowspan="2" class="text-center">Core Values</th>
+                                    <th rowspan="2" class="text-center">Behavior Statements</th>
+                                    <th colspan="4" class="text-center">Quarter</th>
+                                </tr>
+                                <tr class="table-grading-header">
+                                    <th class="text-center">1st</th>
+                                    <th class="text-center">2nd</th>
+                                    <th class="text-center">3rd</th>
+                                    <th class="text-center">4th</th>
+                                </tr>
+                                <tr class="subject-grade-list">
+                                    <td rowspan="2">1. Maka-Diyos</td>
+                                    <td>
+                                        Expresses one spriritual beliefs while respecting the spiritual English beliefs of others
+                                    </td>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaDiyosA1">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaDiyosA2">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaDiyosA3">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaDiyosA4">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <tr class="subject-grade-list">
+                                        <td>Shows adherence to ethical principles by upholding truth</td>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaDiyosB1">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaDiyosB2">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaDiyosB3">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaDiyosB4">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                    </tr>
+                                </tr>
+                                <tr class="subject-grade-list">
+                                    <td rowspan="2">2. Makatao</td>
+                                    <td>
+                                        Is sensitive to individual , social, and cultural differences
+                                    </td>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaTaoA1">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaTaoA2">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaTaoA3">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaTaoA4">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <tr class="subject-grade-list">
+                                        <td>Demonstrates contribution toward solidarity</td>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaTaoB1">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaTaoB2">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaTaoB3">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaTaoB4">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                    </tr>
+                                </tr>
+                                <tr class="subject-grade-list">
+                                    <td>3. Maka Kalikasan
+                                    </td>
+                                    <td>
+                                        Cares for the environment and utilizes resources wisely, judiciously and economically
+                                    </td>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.Makakalikasan1">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.Makakalikasan2">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.Makakalikasan3">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.Makakalikasan4">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                </tr>
+                                <tr class="subject-grade-list">
+                                    <td rowspan="2">4. Maka Bansa
+                                    </td>
+                                    <td>
+                                        Demonstrate pride in being a Filipino; exercises the rights and responsibilities of a Filipino citizen
+                                    </td>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaBansaA1">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaBansaA2">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaBansaA3">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select ng-model="vm.moralHistory.MakaBansaA4">
+                                            <option></option>
+                                            <option value="4">AO</option>
+                                            <option value="3">SO</option>
+                                            <option value="2">RO</option>
+                                            <option value="1">NO</option>
+                                        </select>
+                                    </th>
+                                    <tr class="subject-grade-list">
+                                        <td>Demonstrate appropriate behaviour in carrying out activities in the school, community,
+                                            and country</td>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaBansaB1">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaBansaB2">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaBansaB3">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <select ng-model="vm.moralHistory.MakaBansaB4">
+                                                <option></option>
+                                                <option value="4">AO</option>
+                                                <option value="3">SO</option>
+                                                <option value="2">RO</option>
+                                                <option value="1">NO</option>
+                                            </select>
+                                        </th>
+                                    </tr>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="inherit-height justify-center flex-column text-center" ng-if="vm.filteredSubjects.length == 0">
+                        <h4 class="grey-text">No History was Selected</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-secondary btn-sm" ng-click="vm.editInfo(vm.variables, vm.variables.index)">
+                            <i class="fa fa-chevron-left"></i>&nbsp;Back to Profile</button>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button ng-if="vm.allStudent" type="button" class="btn btn-primary btn-sm" ng-click="vm.saveCard()">
+                            <i class="fa fa-save"></i>&nbsp;Save</button>
+                        <button type="button" class="btn btn-secondary btn-sm" ng-click="vm.cancelView()">
+                            <i class="fa fa-times fa-fw"></i>&nbsp;Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

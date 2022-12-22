@@ -1,0 +1,14 @@
+<div class="container-fluid animated fadeIn">
+    <div ng-controller="AdminCtrl as vm">
+        <div ng-include="'ngapp/administrative/static_variables.html'" include-replace></div>
+    </div>
+    <div ng-controller="UsersCtrl as vm">
+        <div ng-include="'ngapp/administrative/users_list.html'" include-replace></div>
+    </div>
+    <div ng-controller="SubjectsCtrl as vm">
+        <div ng-include="'ngapp/administrative/subjects_list.html'" include-replace></div>
+    </div>
+    <div ng-controller="GradesCtrl as vm">
+        <div ng-include="'ngapp/administrative/grades_list.html'" include-replace></div>
+    </div>
+</div>

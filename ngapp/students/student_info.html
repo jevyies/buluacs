@@ -1,0 +1,143 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <img ng-src="{{ vm.imageSrc }}" class="animated fadeIn">
+                <h1>{{ vm.formName }}</h1>
+            </div>
+            <form ng-submit="vm.saveStudent()">
+                <div class="card-body max-height">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>
+                                <i>Personal Information</i>
+                            </h5>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="jvs-form">
+                                <label class="text-center">First Name</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.firstname" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="jvs-form">
+                                <label class="text-center">Middle Name</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.middlename" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="jvs-form">
+                                <label class="text-center">Last Name</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.lastname" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="jvs-form">
+                                <label class="text-center">Extention Name</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.extname" />
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="jvs-form">
+                                <label class="text-center">Address</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.address" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="jvs-form">
+                                <label class="text-center">Date of Birth</label>
+                                <input type="date" class="form-control text-center" ng-model="vm.variables.dob" required ng-change="vm.ageCalculator(vm.variables.dob)"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="jvs-form">
+                                <label class="text-center">Age</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.age" disabled/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="jvs-form">
+                                <label class="text-center">Sex</label>
+                                <!-- <input type="text" class="form-control text-center" ng-model="vm.variables.sex" /> -->
+                                <select class="form-control text-center" ng-model="vm.variables.sex" ng-change="vm.changeSex()">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="jvs-form">
+                                <label class="text-center">ID No.</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.id_no" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="jvs-form">
+                                <label class="text-center">LRN No.</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.lrn" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="jvs-form">
+                                <label class="text-center">Date of Entrance</label>
+                                <input type="date" class="form-control text-center" ng-model="vm.variables.date_of_entrance" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>
+                                <i>Parent's Information</i>
+                            </h5>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="jvs-form">
+                                <label class="text-center">Guardian's Name</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.guardian" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="jvs-form">
+                                <label class="text-center">Guardian's Address</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.guardian_address" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="jvs-form">
+                                <label class="text-center">Guardian's Occupation</label>
+                                <input type="text" class="form-control text-center" ng-model="vm.variables.guardian_occupation" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding-top-15 bottom-margin">
+                        <div class="col-md-6">
+                            <button ng-if="!vm.allStudent && vm.variables.student_id && !vm.variables.export" type="button" class="btn btn-basic btn-sm full-width"
+                                ng-click="vm.reportCard(vm.variables, vm.variables.index)">
+                                <i class="fa fa-credit-card fa-fw"></i>&nbsp;Report Card</button>
+                        </div>
+                        <div class="col-md-12" ng-class="{'col-md-6': !vm.allStudent}">
+                            <button ng-if="vm.variables.student_id && !vm.variables.export" type="button" class="btn btn-basic btn-sm full-width" ng-click="vm.viewHistory(vm.variables, vm.variables.index)">
+                                <i class="fa fa-wpforms fa-fw"></i>&nbsp;Student History</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button ng-if="!vm.allStudent && !vm.variables.student_id" type="button" class="btn btn-warning btn-sm" ng-click="vm.exportStudent()">Import Student</button>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button ng-if="vm.variables.student_id && !vm.variables.export" type="button" class="btn btn-danger btn-sm" ng-click="vm.deleteStudent(vm.variables.student_id, vm.variables.index)">
+                                <i class="fa fa-trash"></i>&nbsp;Delete</button>
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-save"></i>&nbsp;Save</button>
+                            <button type="button" class="btn btn-basic btn-sm" ng-click="vm.cancelView()">
+                                <i class="fa fa-times"></i>&nbsp;Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
