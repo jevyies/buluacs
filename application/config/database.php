@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => '103.62.153.118',
+	'username' => 'dauser',
+	'password' => '1q2w3e4r5t',
 	'database' => 'dbbulua_iss',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
